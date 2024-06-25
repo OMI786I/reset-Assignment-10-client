@@ -86,7 +86,10 @@ const Login = () => {
                     className="input input-bordered"
                     required
                   />
-                  <span onClick={() => setShowPassWord(!showPassWord)}>
+                  <span
+                    className="hover:cursor-pointer"
+                    onClick={() => setShowPassWord(!showPassWord)}
+                  >
                     {showPassWord ? (
                       <FaRegEye></FaRegEye>
                     ) : (
@@ -96,7 +99,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-warning">Login</button>
               </div>
             </form>
             <p>Or signIn with</p>

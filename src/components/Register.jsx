@@ -104,7 +104,10 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
-              <span onClick={() => setShowPassWord(!showPassWord)}>
+              <span
+                className="hover:cursor-pointer"
+                onClick={() => setShowPassWord(!showPassWord)}
+              >
                 {showPassWord ? (
                   <FaRegEye></FaRegEye>
                 ) : (
@@ -114,7 +117,7 @@ const Register = () => {
             </div>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn btn-warning">Register</button>
           </div>
         </form>
         <Link to="/login">Login Page</Link>
