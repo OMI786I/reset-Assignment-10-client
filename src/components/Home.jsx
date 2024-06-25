@@ -54,7 +54,7 @@ const Home = () => {
                 </p>
 
                 <div className="flex gap-6 mt-7">
-                  <Link>
+                  <Link to={`/details/${data._id}`}>
                     {" "}
                     <button className="btn btn-warning"> View Details </button>
                   </Link>

@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import AuthProvider from "./components/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
+import Details from "./components/Details";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: () => fetch("http://localhost:5000/tourist-spot-section/"),
       },
     ],
   },
