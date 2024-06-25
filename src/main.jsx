@@ -8,6 +8,8 @@ import Home from "./components/Home";
 import AllTouristSpot from "./components/AllTouristSpot";
 import AddTouristSpot from "./components/AddTouristSpot";
 import MyList from "./components/MyList";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: "/myList",
         element: <MyList></MyList>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },
