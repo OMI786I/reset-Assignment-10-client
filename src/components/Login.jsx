@@ -12,8 +12,25 @@ const Login = () => {
   const [showPassWord, setShowPassWord] = useState(false);
   const [error, setError] = useState("");
   const { signIn } = useContext(AuthContext);
+  const { googleSignIn } = useContext(AuthContext);
+  const { githubSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleGoogle = () => {
+    googleSignIn().then((result) => {
+      console.log(result.user);
+      navigate(location?.state ? location.state : "/");
+    });
+  };
+
+  const handleGitHub = () => {
+    githubSignIn().then((result) => {
+      console.log(result.user);
+      navigate(location?.state ? location.state : "/");
+    });
+  };
+
   const handleSignIn = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -84,10 +101,10 @@ const Login = () => {
             </form>
             <p>Or signIn with</p>
             <div className="flex gap-4">
-              <button className="btn">
+              <button className="btn" onClick={handleGoogle}>
                 <FcGoogle className="text-3xl" />
               </button>
-              <button className="btn">
+              <button className="btn" onClick={handleGitHub}>
                 <FaGithub className="text-3xl" />
               </button>
             </div>
