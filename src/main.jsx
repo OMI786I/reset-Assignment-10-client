@@ -11,6 +11,7 @@ import MyList from "./components/MyList";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AuthProvider from "./components/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -27,11 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addTouristSpot",
-        element: <AddTouristSpot></AddTouristSpot>,
+        element: (
+          <PrivateRoute>
+            <AddTouristSpot></AddTouristSpot>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myList",
-        element: <MyList></MyList>,
+        element: (
+          <PrivateRoute>
+            <MyList></MyList>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
