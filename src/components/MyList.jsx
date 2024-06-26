@@ -9,7 +9,49 @@ const MyList = () => {
   console.log(data);
   const filtered = data && data.filter((u) => u.email === user.email);
   console.log(filtered);
-  return <div>This is my list</div>;
+  return (
+    <div>
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th></th>
+              <th>Spot Name</th>
+              <th>Location</th>
+              <th>Visitors</th>
+              <th>cost</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            {filtered.map((data) => {
+              return (
+                <tr key={data._id}>
+                  <th></th>
+                  <th>{data.spotName}</th>
+                  <th>{data.location}</th>
+                  <th>{data.visitor}</th>
+                  <th>{data.cost}</th>
+                  <th>
+                    <button className="btn btn-warning">Update</button>
+                  </th>
+                  <th>
+                    <button className="btn btn-warning">Delete</button>
+                  </th>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {filtered.map((data) => (
+        <div key={data._id}></div>
+      ))}
+    </div>
+  );
 };
 
 export default MyList;
