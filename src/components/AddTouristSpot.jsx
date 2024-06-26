@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "./AuthProvider";
 
 const AddTouristSpot = () => {
+  const { user } = useContext(AuthContext);
+
   const handleSubmitSpot = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -50,6 +54,10 @@ const AddTouristSpot = () => {
   return (
     <div>
       <Toaster></Toaster>
+      <h1 className="text-center font-bold text-3xl underline">
+        {" "}
+        You can add tourist spot here
+      </h1>
       <form className="card-body" onSubmit={handleSubmitSpot}>
         <div className="form-control">
           <label className="label">
@@ -170,6 +178,7 @@ const AddTouristSpot = () => {
             type="email"
             placeholder="email"
             className="input input-bordered"
+            value={user.email}
             required
           />
         </div>
