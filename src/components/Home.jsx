@@ -3,6 +3,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import Newsletter from "./Newsletter";
 import Review from "./Review";
 import CountrySection from "./CountrySection";
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "./groovywalk.json";
 
 const Home = () => {
   const data = useLoaderData();
@@ -75,7 +77,15 @@ const Home = () => {
       <Review></Review>
 
       <div>
-        <h1 className="text-3xl text-center my-10 ">Country </h1>
+        <div className="flex items-center">
+          <Lottie
+            animationData={groovyWalkAnimation}
+            loop={true}
+            className="w-[20%]"
+          />
+          <h1 className="text-3xl text-center my-10 ">Countries to visit </h1>
+        </div>
+
         <CountrySection></CountrySection>
       </div>
     </div>
