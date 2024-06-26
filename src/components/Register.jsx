@@ -1,7 +1,7 @@
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "./AuthProvider";
@@ -10,7 +10,8 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
   const [showPassWord, setShowPassWord] = useState(false);
   const { createUser } = useContext(AuthContext);
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleRegitser = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
@@ -37,6 +38,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
+        navigate(location?.state ? location.state : "/");
         console.log(result);
         toast.success("You have successfully registered");
         updateProfile(result.user, {
