@@ -1,10 +1,12 @@
+import toast, { Toaster } from "react-hot-toast";
+
 const AddTouristSpot = () => {
   const handleSubmitSpot = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
-    const password = form.get("password");
+
     const name = form.get("name");
     const photo = form.get("photo");
     const countryName = form.get("countryName");
@@ -15,7 +17,7 @@ const AddTouristSpot = () => {
     const time = form.get("time");
     const visitor = form.get("visitor");
     const spotName = form.get("spotName");
-    console.log(
+    const addedData = {
       email,
 
       name,
@@ -27,12 +29,27 @@ const AddTouristSpot = () => {
       season,
       time,
       visitor,
-      spotName
-    );
+      spotName,
+    };
+
+    fetch("http://localhost:5000/addedSection", {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(addedData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast.success("You have successfully added ");
+        }
+      });
   };
 
   return (
     <div>
+      <Toaster></Toaster>
       <form className="card-body" onSubmit={handleSubmitSpot}>
         <div className="form-control">
           <label className="label">
