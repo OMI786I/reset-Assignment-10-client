@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CountrySection = () => {
   const [data, setData] = useState([]);
@@ -7,8 +8,6 @@ const CountrySection = () => {
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
-
-  console.log(data);
 
   return (
     <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 my-20">
@@ -23,9 +22,11 @@ const CountrySection = () => {
           <div className="card-body">
             <h2 className="card-title">{data.country_name}</h2>
             <p>{data.short_description}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-warning">View</button>
-            </div>
+            <Link to={data.country_name.toLowerCase()}>
+              <div className="card-actions justify-end">
+                <button className="btn btn-warning">View</button>
+              </div>
+            </Link>
           </div>
         </div>
       ))}
