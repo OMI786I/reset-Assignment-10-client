@@ -2,6 +2,7 @@ import CarouselFunc from "./CarouselFunc";
 import { Link, useLoaderData } from "react-router-dom";
 import Newsletter from "./Newsletter";
 import Review from "./Review";
+import CountrySection from "./CountrySection";
 
 const Home = () => {
   const data = useLoaderData();
@@ -10,6 +11,9 @@ const Home = () => {
   return (
     <div>
       <CarouselFunc></CarouselFunc>
+
+      <h1 className="text-3xl text-center my-10 ">Tourist Spot</h1>
+
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
         {data.map((data) => (
           <div key={data._id}>
@@ -69,6 +73,11 @@ const Home = () => {
 
       <Newsletter></Newsletter>
       <Review></Review>
+
+      <div>
+        <h1 className="text-3xl text-center my-10 ">Country </h1>
+        <CountrySection></CountrySection>
+      </div>
     </div>
   );
 };
