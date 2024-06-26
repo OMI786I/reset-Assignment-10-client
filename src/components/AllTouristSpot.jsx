@@ -44,8 +44,7 @@ const AllTouristSpot = () => {
                 </p>
 
                 <div className="flex gap-6 mt-7">
-                  <Link to={`/details/${data._id}`}>
-                    {" "}
+                  <Link to={`/detailsAddSpot/${data._id}`}>
                     <button className="btn btn-warning"> View Details </button>
                   </Link>
                 </div>

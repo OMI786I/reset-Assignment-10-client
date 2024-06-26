@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import AuthProvider from "./components/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 import Details from "./components/Details";
+import DetailsForAddSpot from "./components/DetailsForAddSpot";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/tourist-spot-section/"),
+      },
+      {
+        path: "/detailsAddSpot/:id",
+        element: <DetailsForAddSpot></DetailsForAddSpot>,
+        loader: () => fetch("http://localhost:5000/addedSection"),
       },
     ],
   },
