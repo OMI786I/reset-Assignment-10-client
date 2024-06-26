@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import Swal from "sweetalert2";
 const MyList = () => {
@@ -71,7 +71,9 @@ const MyList = () => {
                   <th>{data.visitor}</th>
                   <th>{data.cost}</th>
                   <th>
-                    <button className="btn btn-warning">Update</button>
+                    <Link to={`/updateAddSpot/${data._id}`}>
+                      <button className="btn btn-warning">Update</button>
+                    </Link>
                   </th>
                   <th>
                     <button

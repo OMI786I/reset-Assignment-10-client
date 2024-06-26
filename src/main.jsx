@@ -14,6 +14,7 @@ import AuthProvider from "./components/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute";
 import Details from "./components/Details";
 import DetailsForAddSpot from "./components/DetailsForAddSpot";
+import UpdateTouristSpot from "./components/UpdateTouristSpot";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/addedSection"),
+      },
+      {
+        path: "/updateAddSpot/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateTouristSpot></UpdateTouristSpot>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addedSection/${params.id}`),
       },
     ],
   },
