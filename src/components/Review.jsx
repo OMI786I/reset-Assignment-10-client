@@ -1,25 +1,44 @@
 import { FaStar } from "react-icons/fa";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import "swiper/css/autoplay";
-import SwiperCore from "swiper";
+
+import { Typewriter } from "react-simple-typewriter";
+
 const Review = () => {
   return (
     <div>
       <div className="flex md:flex-row flex-col w-full ">
-        <div className="md:w-[50%] bg-yellow-500 font-mono text-3xl text-center flex items-center">
-          Our Customer Speaks for us
+        <div className="md:w-[50%] bg-yellow-500 font-mono text-3xl text-center flex items-center justify-center">
+          <h1
+            style={{
+              paddingTop: "5rem",
+              margin: "auto 0",
+              fontWeight: "normal",
+            }}
+          >
+            Life is simple{" "}
+            <span style={{ color: "red", fontWeight: "bold" }}>
+              {/* Style will be inherited from the parent element */}
+              <Typewriter
+                words={["Eat", "Sleep", "Travel", "Repeat!"]}
+                loop={0}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </h1>
         </div>
         <div className="md:w-[49%]">
+          <h1 className="text-center font-bold text-2xl text-yellow-500 border border-yellow-600 p-3">
+            Our Customers Speaks for us
+          </h1>
           <Swiper
-            className="w-[80%]"
+            className="w-[80%] "
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={50}
             slidesPerView={1}
