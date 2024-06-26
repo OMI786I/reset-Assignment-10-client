@@ -1,6 +1,7 @@
 import CarouselFunc from "./CarouselFunc";
 import { Link, useLoaderData } from "react-router-dom";
 import Newsletter from "./Newsletter";
+import Review from "./Review";
 
 const Home = () => {
   const data = useLoaderData();
@@ -67,6 +68,7 @@ const Home = () => {
       </div>
 
       <Newsletter></Newsletter>
+      <Review></Review>
     </div>
   );
 };
