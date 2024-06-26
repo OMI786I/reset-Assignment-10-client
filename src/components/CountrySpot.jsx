@@ -8,6 +8,8 @@ const CountrySpot = () => {
 
   return (
     <div>
+      <h1 className="text-center text-3xl">Places in {name}</h1>
+
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
         {data.map((data) => (
           <div key={data._id}>
@@ -54,7 +56,9 @@ const CountrySpot = () => {
                 </p>
 
                 <div className="flex gap-6 mt-7">
-                  <Link to={`/details/${data._id}`}>
+                  <Link
+                    to={`/detailsCountrySpot/${data.country_Name}/${data._id}`}
+                  >
                     {" "}
                     <button className="btn btn-warning"> View Details </button>
                   </Link>
