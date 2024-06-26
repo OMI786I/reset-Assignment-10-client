@@ -66,6 +66,8 @@ const AllTouristSpot = () => {
                   <span className="font-bold block ">Time </span> {data.time}
                   <span className="font-bold block ">Visitors </span>{" "}
                   {data.visitor}
+                  <span className="font-bold block ">Submitted By </span>{" "}
+                  {data.email}
                 </p>
 
                 <div className="flex gap-6 mt-7">

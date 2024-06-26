@@ -184,7 +184,7 @@ const AddTouristSpot = () => {
         </div>
 
         <div className="form-control mt-6">
-          <button className="btn btn-warning">Register</button>
+          <button className="btn btn-warning">Add</button>
         </div>
       </form>
     </div>
