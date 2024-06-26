@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllTouristSpot = () => {
   const data = useLoaderData();
-  console.log(data);
+
+  const [sortOrder, setSortOrder] = useState("asc");
+
+  const handleSort = (order) => {
+    setSortOrder(order);
+  };
+
+  const sortedData = [...data].sort((a, b) => {
+    return sortOrder === "asc" ? a.cost - b.cost : b.cost - a.cost;
+  });
 
   return (
     <div>
@@ -10,8 +20,23 @@ const AllTouristSpot = () => {
         {" "}
         You can find all added tourist spot here
       </h1>
+      <div className="text-center my-4">
+        <label htmlFor="sortOrder" className="font-bold mr-2">
+          Sort by price:
+        </label>
+        <select
+          id="sortOrder"
+          value={sortOrder}
+          onChange={(e) => handleSort(e.target.value)}
+          className="border rounded p-2"
+        >
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
+      ;
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3">
-        {data.map((data) => (
+        {sortedData.map((data) => (
           <div key={data._id}>
             <div
               className="flex flex-col gap-11 mt-10 xl:w-96  border p-10 rounded-xl "
