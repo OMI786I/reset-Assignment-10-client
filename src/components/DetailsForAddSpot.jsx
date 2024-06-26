@@ -30,7 +30,7 @@ const DetailsForAddSpot = () => {
           <div className="border-t-2 mt-4 pt-6 ">
             <div className="flex gap-16 ">
               <span className="text-gray-700:">Price:</span>{" "}
-              <span className="font-bold">{detail.cost}</span>
+              <span className="font-bold">{detail.cost} usd </span>
             </div>
             <div className="flex gap-16 ">
               <span className="text-gray-700:">Season:</span>{" "}

@@ -65,7 +65,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/detailsAddSpot/:id",
-        element: <DetailsForAddSpot></DetailsForAddSpot>,
+        element: (
+          <PrivateRoute>
+            <DetailsForAddSpot></DetailsForAddSpot>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/addedSection"),
       },
     ],

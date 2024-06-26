@@ -29,7 +29,7 @@ const AllTouristSpot = () => {
 
                 <div className=" border-t-2 border-b-2 p-1 mt-3 ">
                   <p>
-                    <span className="font-bold">cost:</span> {data.cost}
+                    <span className="font-bold">cost:</span> {data.cost} usd
                   </p>
                   <p>
                     {" "}

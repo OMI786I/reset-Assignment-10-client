@@ -112,7 +112,7 @@ const AddTouristSpot = () => {
           </label>
           <input
             name="cost"
-            type="text"
+            type="number"
             placeholder="cost"
             className="input input-bordered"
           />
