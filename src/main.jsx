@@ -16,6 +16,7 @@ import Details from "./components/Details";
 import DetailsForAddSpot from "./components/DetailsForAddSpot";
 import UpdateTouristSpot from "./components/UpdateTouristSpot";
 import ErrorPage from "./components/ErrorPage";
+import CountrySpot from "./components/CountrySpot";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,11 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/addedSection/${params.id}`),
+      },
+      {
+        path: "/country/:name",
+        element: <CountrySpot></CountrySpot>,
+        loader: ({ params }) => fetch(`http://localhost:5000/${params.name}`),
       },
     ],
   },

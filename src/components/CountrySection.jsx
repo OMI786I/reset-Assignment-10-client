@@ -22,7 +22,7 @@ const CountrySection = () => {
           <div className="card-body">
             <h2 className="card-title">{data.country_name}</h2>
             <p>{data.short_description}</p>
-            <Link to={data.country_name.toLowerCase()}>
+            <Link to={`/country/${data.country_name.toLowerCase()}`}>
               <div className="card-actions justify-end">
                 <button className="btn btn-warning">View</button>
               </div>
