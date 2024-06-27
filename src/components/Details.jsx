@@ -22,7 +22,7 @@ const Details = () => {
             <h1 className="md:text-3xl text-2xl">
               {detail.tourists_spot_name}
             </h1>
-            <p className="text-gray-700 mt-3"> {detail.location}</p>
+            <p className="text-gray-700 mt-3"> {detail.country_Name}</p>
 
             <p className="mt-3">
               <span className="font-bold ">description: </span>{" "}

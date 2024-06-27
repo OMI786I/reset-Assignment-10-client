@@ -15,7 +15,7 @@ const DetailsCountrySpot = () => {
 
           <div>
             <h1 className="md:text-3xl text-2xl">{data.tourists_spot_name}</h1>
-            <p className="text-gray-700 mt-3"> {data.location}</p>
+            <p className="text-gray-700 mt-3"> {data.country_Name}</p>
 
             <p className="mt-3">
               <span className="font-bold ">description: </span>{" "}
