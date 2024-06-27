@@ -14,7 +14,7 @@ SwiperCore.use([Autoplay]);
 
 const CarouselFunc = () => {
   return (
-    <div className="flex justify-center  mt-36 md:mt-14 ">
+    <div className="flex justify-center  mt-36 ">
       <Swiper
         className="w-[80%]"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
