@@ -108,7 +108,11 @@ const router = createBrowserRouter([
 
       {
         path: "/detailsCountrySpot/:name/:id",
-        element: <DetailsCountrySpot></DetailsCountrySpot>,
+        element: (
+          <PrivateRoute>
+            <DetailsCountrySpot></DetailsCountrySpot>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://server-side-sand-three.vercel.app/${params.name}/${params.id}`
