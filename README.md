@@ -1,8 +1,16 @@
-# React + Vite
+# Vromon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+making memory since 1998
 
-Currently, two official plugins are available:
+# Live Link : https://reset-assignment-10.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Here are the features for the website
+
+- Can login and register
+- user name and photo will be shown inside the navbar
+- Dark/light mode
+- User can add his own tourist spot from add tourist spot page
+- User can view other people's tourist spot
+- Can show his own added tourist spot and can update or delete it
+- Used mongo crud operation
+- All the tourist spot of different countries are shown
