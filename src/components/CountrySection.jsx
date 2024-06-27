@@ -26,7 +26,7 @@ const CountrySection = () => {
           {data.map((data) => (
             <div
               key={data._id}
-              className="card bg-base-100 w-96 md:w-80 lg:w-80 xl:2-96 shadow-xl"
+              className="card bg-base-100 w-[100%] md:w-80 lg:w-80 xl:2-96 shadow-xl"
             >
               <figure>
                 <img src={data.image} alt="Shoes" />
