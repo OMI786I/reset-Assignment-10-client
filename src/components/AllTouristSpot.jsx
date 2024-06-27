@@ -68,6 +68,8 @@ const AllTouristSpot = () => {
                     <span className="font-bold block ">Visitors </span>{" "}
                     {data.visitor}
                     <span className="font-bold block ">Submitted By </span>{" "}
+                    {data.name}
+                    <span className="font-bold block ">Email </span>{" "}
                     {data.email}
                   </p>
 

@@ -79,7 +79,10 @@ const Navbar = () => {
               {navLink}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Vromon</a>
+          <a className="btn btn-ghost text-xl ">
+            <img src="/Eagle-Logo-Graphics-1-42-580x386.jpg" className="w-10" />
+            <h1 className="hidden md:inline">Vromon</h1>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navLink}</ul>
@@ -130,10 +133,10 @@ const Navbar = () => {
             <div>
               {" "}
               <NavLink to="login">
-                <button className="btn">Login</button>
+                <button className="btn btn-warning">Login</button>
               </NavLink>
               <NavLink to="register">
-                <button className="btn">Register</button>
+                <button className="btn btn-warning">Register</button>
               </NavLink>
             </div>
           )}

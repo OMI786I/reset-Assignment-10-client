@@ -5,6 +5,7 @@ import Review from "./Review";
 import CountrySection from "./CountrySection";
 import Lottie from "lottie-react";
 import groovyWalkAnimation from "./groovywalk.json";
+import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const data = useLoaderData();
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <div>
+      <Toaster></Toaster>
       <CarouselFunc></CarouselFunc>
 
       <h1 className="text-3xl text-center my-10 ">Tourist Spot</h1>

@@ -21,6 +21,7 @@ const Login = () => {
     googleSignIn().then((result) => {
       console.log(result.user);
       navigate(location?.state ? location.state : "/");
+      toast.success("Successfully logged in");
     });
   };
 
@@ -28,6 +29,7 @@ const Login = () => {
     githubSignIn().then((result) => {
       console.log(result.user);
       navigate(location?.state ? location.state : "/");
+      toast.success("Successfully logged in");
     });
   };
 
@@ -41,6 +43,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         navigate(location?.state ? location.state : "/");
+        toast.success("Successfully logged in");
       })
       .catch((error) => {
         setError(error);
