@@ -5,7 +5,7 @@ const CountrySection = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/countrySection")
+    fetch("https://server-side-sand-three.vercel.app/countrySection")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

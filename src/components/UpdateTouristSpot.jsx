@@ -34,13 +34,16 @@ const UpdateTouristSpot = () => {
     };
     console.log(addedData);
 
-    fetch(`http://localhost:5000/addedSection/${data._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addedData),
-    })
+    fetch(
+      `https://server-side-sand-three.vercel.app/addedSection/${data._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addedData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

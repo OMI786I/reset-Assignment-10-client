@@ -36,7 +36,7 @@ const AddTouristSpot = () => {
       spotName,
     };
 
-    fetch("http://localhost:5000/addedSection", {
+    fetch("https://server-side-sand-three.vercel.app/addedSection", {
       method: "POST",
       headers: {
         "content-Type": "application/json",

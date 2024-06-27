@@ -28,12 +28,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/tourist-spot-section"),
+        loader: () =>
+          fetch(
+            "https://server-side-sand-three.vercel.app/tourist-spot-section"
+          ),
       },
       {
         path: "/allTouristSpot",
         element: <AllTouristSpot></AllTouristSpot>,
-        loader: () => fetch("http://localhost:5000/addedSection"),
+        loader: () =>
+          fetch("https://server-side-sand-three.vercel.app/addedSection"),
       },
       {
         path: "/addTouristSpot",
@@ -50,7 +54,8 @@ const router = createBrowserRouter([
             <MyList></MyList>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/addedSection"),
+        loader: () =>
+          fetch("https://server-side-sand-three.vercel.app/addedSection"),
       },
       {
         path: "/login",
@@ -67,7 +72,10 @@ const router = createBrowserRouter([
             <Details></Details>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/tourist-spot-section/"),
+        loader: () =>
+          fetch(
+            "https://server-side-sand-three.vercel.app/tourist-spot-section/"
+          ),
       },
       {
         path: "/detailsAddSpot/:id",
@@ -76,7 +84,8 @@ const router = createBrowserRouter([
             <DetailsForAddSpot></DetailsForAddSpot>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/addedSection"),
+        loader: () =>
+          fetch("https://server-side-sand-three.vercel.app/addedSection"),
       },
       {
         path: "/updateAddSpot/:id",
@@ -86,19 +95,24 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addedSection/${params.id}`),
+          fetch(
+            `https://server-side-sand-three.vercel.app/addedSection/${params.id}`
+          ),
       },
       {
         path: "/country/:name",
         element: <CountrySpot></CountrySpot>,
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.name}`),
+        loader: ({ params }) =>
+          fetch(`https://server-side-sand-three.vercel.app/${params.name}`),
       },
 
       {
         path: "/detailsCountrySpot/:name/:id",
         element: <DetailsCountrySpot></DetailsCountrySpot>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/${params.name}/${params.id}`),
+          fetch(
+            `https://server-side-sand-three.vercel.app/${params.name}/${params.id}`
+          ),
       },
     ],
   },
