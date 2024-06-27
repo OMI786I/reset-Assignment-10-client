@@ -48,6 +48,11 @@ const CountrySpot = () => {
                       <span className="font-bold">seasonality:</span>{" "}
                       {data.seasonality}{" "}
                     </p>
+                    <p>
+                      {" "}
+                      <span className="font-bold">location:</span>{" "}
+                      {data.location}{" "}
+                    </p>
                   </div>
                   <p className="mt-3">
                     <span className="font-bold block ">Time </span>{" "}
